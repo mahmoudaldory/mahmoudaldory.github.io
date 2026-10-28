@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>أول موقع ليا</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <header class="site-header" id="top">
+        <h1>موقع محمود</h1>
+        <p>أهلاً بيكم في موقعي الشخصي</p>
+    </header>
+
+    <nav class="menu">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">من أنا</a>
+        <a href="#services">خدماتي</a>
+        <a href="#contact">تواصل معنا</a>
+        <button id="theme-button">🌙 الوضع الليلي</button>
+    </nav>
+
+    <div class="card" id="home">
+
+        <h2>أهلاً بيكم في موقعي الأول</h2>
+
+        <section id="about" class="info-section">
+            <h2>من أنا؟</h2>
+            <p>
+                أنا محمود، وبحب البرمجة وتصميم المواقع والألعاب.
+                وبتعلم كل يوم حاجة جديدة علشان أطور مهاراتي.
+            </p>
+        </section>
+        
+<section id="services" class="services-section">
+    <h2>خدماتي</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+            <h3>🌐 تصميم المواقع</h3>
+            <p>تصميم صفحات ويب جميلة ومنظمة باستخدام HTML وCSS.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🐍 برمجة بايثون</h3>
+            <p>تعلم البرمجة وبناء برامج مفيدة ومشروعات جديدة.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🎮 تطوير الألعاب</h3>
+            <p>إنشاء ألعاب ثنائية الأبعاد وتجربة أفكار ممتعة.</p>
+        </div>
+
+    </div>
+</section>
+
+        <img src="car.jpg" alt="صورة سيارة" width="300">
+
+        <br><br>
+
+        <a class="my-button" href="https://www.google.com">
+            افتح جوجل
+        </a>
+
+
+
+        <section id="contact" class="info-section">
+            <h2>تواصل معنا</h2>
+            <p>عندك سؤال أو اقتراح؟ ابعتلنا رسالة.</p>
+        
+            <form id="contact-form">
+        
+                <label for="visitor-name">الاسم:</label>
+                <input
+                    type="text"
+                    id="visitor-name"
+                    name="visitor-name"
+                    placeholder="اكتب اسمك"
+                    required
+                >
+        
+                <label for="visitor-email">البريد الإلكتروني:</label>
+                <input
+                    type="email"
+                    id="visitor-email"
+                    name="visitor-email"
+                    placeholder="example@gmail.com"
+                    required
+                >
+        
+                <label for="visitor-message">رسالتك:</label>
+                <textarea
+                    id="visitor-message"
+                    name="visitor-message"
+                    placeholder="اكتب رسالتك هنا"
+                    rows="5"
+                    required
+                ></textarea>
+        
+                <button type="submit" class="my-button">
+                    إرسال الرسالة
+                </button>
+        
+                <p id="form-message" aria-live="polite"></p>
+        
+            </form>
+        </section>
+        
+        
+
+    </div>
+
+
+
+
+    
+    
+    
+
+    <script>
+
+const themeButton = document.getElementById("theme-button");
+
+// استرجاع الوضع المحفوظ عند فتح الصفحة
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeButton.textContent = "☀️ الوضع الفاتح";
+}
+
+themeButton.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        themeButton.textContent = "☀️ الوضع الفاتح";
+        localStorage.setItem("theme", "dark");
+    } else {
+        themeButton.textContent = "🌙 الوضع الليلي";
+        localStorage.setItem("theme", "light");
+    }
+});
+
+    // التحقق من بيانات نموذج التواصل
+    const contactForm = document.getElementById("contact-form");
+    const formMessage = document.getElementById("form-message");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("visitor-name").value.trim();
+        const email = document.getElementById("visitor-email").value.trim();
+        const message = document.getElementById("visitor-message").value.trim();
+
+        if (name === "" || email === "" || message === "") {
+            formMessage.textContent = "من فضلك املى كل الخانات.";
+            formMessage.style.color = "red";
+            return;
+        }
+
+        formMessage.textContent =
+            "تم التحقق من البيانات بنجاح! لكن الرسالة لم تُرسل فعليًا.";
+        formMessage.style.color = "green";
+    });
+
+
+    </script>
+    
+
+    <footer class="site-footer">
+        <p>© 2026 - موقع محمود</p>
+        <p>تم تصميم الموقع باستخدام HTML وCSS وJavaScript</p>
+    </footer>
+    
+    <a href="#top" class="back-to-top" aria-label="العودة إلى أعلى الصفحة">↑</a>
+
+</body>
+</html>
