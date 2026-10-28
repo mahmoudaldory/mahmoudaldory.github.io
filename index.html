@@ -72,13 +72,12 @@
             <h2>تواصل معنا</h2>
             <p>عندك سؤال أو اقتراح؟ ابعتلنا رسالة.</p>
         
-            <form id="contact-form">
-        
+            <form id="contact-form" action="https://formsubmit.app/f/u76w3m9exr" method="POST">
                 <label for="visitor-name">الاسم:</label>
                 <input
                     type="text"
                     id="visitor-name"
-                    name="visitor-name"
+                    name="name"
                     placeholder="اكتب اسمك"
                     required
                 >
@@ -87,7 +86,7 @@
                 <input
                     type="email"
                     id="visitor-email"
-                    name="visitor-email"
+                    name="email"
                     placeholder="example@gmail.com"
                     required
                 >
@@ -95,12 +94,13 @@
                 <label for="visitor-message">رسالتك:</label>
                 <textarea
                     id="visitor-message"
-                    name="visitor-message"
+                    name="message"
                     placeholder="اكتب رسالتك هنا"
                     rows="5"
                     required
                 ></textarea>
-        
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
                 <button type="submit" class="my-button">
                     إرسال الرسالة
                 </button>
@@ -143,27 +143,6 @@ themeButton.addEventListener("click", function () {
     }
 });
 
-    // التحقق من بيانات نموذج التواصل
-    const contactForm = document.getElementById("contact-form");
-    const formMessage = document.getElementById("form-message");
-
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById("visitor-name").value.trim();
-        const email = document.getElementById("visitor-email").value.trim();
-        const message = document.getElementById("visitor-message").value.trim();
-
-        if (name === "" || email === "" || message === "") {
-            formMessage.textContent = "من فضلك املى كل الخانات.";
-            formMessage.style.color = "red";
-            return;
-        }
-
-        formMessage.textContent =
-            "تم التحقق من البيانات بنجاح! لكن الرسالة لم تُرسل فعليًا.";
-        formMessage.style.color = "green";
-    });
 
 
     </script>
