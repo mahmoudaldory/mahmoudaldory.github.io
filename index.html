@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
     <header class="site-header" id="top">
@@ -36,28 +35,28 @@
             </p>
         </section>
         
-<section id="services" class="services-section">
-    <h2>خدماتي</h2>
+        <section id="services" class="services-section">
+            <h2>خدماتي</h2>
 
-    <div class="services-container">
+            <div class="services-container">
 
-        <div class="service-card">
-            <h3>🌐 تصميم المواقع</h3>
-            <p>تصميم صفحات ويب جميلة ومنظمة باستخدام HTML وCSS.</p>
-        </div>
+                <div class="service-card">
+                    <h3>🌐 تصميم المواقع</h3>
+                    <p>تصميم صفحات ويب جميلة ومنظمة باستخدام HTML وCSS.</p>
+                </div>
 
-        <div class="service-card">
-            <h3>🐍 برمجة بايثون</h3>
-            <p>تعلم البرمجة وبناء برامج مفيدة ومشروعات جديدة.</p>
-        </div>
+                <div class="service-card">
+                    <h3>🐍 برمجة بايثون</h3>
+                    <p>تعلم البرمجة وبناء برامج مفيدة ومشروعات جديدة.</p>
+                </div>
 
-        <div class="service-card">
-            <h3>🎮 تطوير الألعاب</h3>
-            <p>إنشاء ألعاب ثنائية الأبعاد وتجربة أفكار ممتعة.</p>
-        </div>
+                <div class="service-card">
+                    <h3>🎮 تطوير الألعاب</h3>
+                    <p>إنشاء ألعاب ثنائية الأبعاد وتجربة أفكار ممتعة.</p>
+                </div>
 
-    </div>
-</section>
+            </div>
+        </section>
 
         <img src="car.jpg" alt="صورة سيارة" width="300">
 
@@ -67,7 +66,11 @@
             افتح جوجل
         </a>
 
+        <br><br>
 
+        <a class="my-button" href="deutsch-lernen/">
+            🇩🇪 Deutsch Lernen - تعلم الألماني
+        </a>
 
         <section id="contact" class="info-section">
             <h2>تواصل معنا</h2>
@@ -100,6 +103,7 @@
                     rows="5"
                     required
                 ></textarea>
+
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
                 <button type="submit" class="my-button">
@@ -110,44 +114,32 @@
         
             </form>
         </section>
-        
-        
 
     </div>
 
-
-
-
-    
-    
-    
-
     <script>
 
-const themeButton = document.getElementById("theme-button");
+        const themeButton = document.getElementById("theme-button");
 
-// استرجاع الوضع المحفوظ عند فتح الصفحة
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    themeButton.textContent = "☀️ الوضع الفاتح";
-}
+        // استرجاع الوضع المحفوظ عند فتح الصفحة
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+            themeButton.textContent = "☀️ الوضع الفاتح";
+        }
 
-themeButton.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
+        themeButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
 
-    if (document.body.classList.contains("dark-mode")) {
-        themeButton.textContent = "☀️ الوضع الفاتح";
-        localStorage.setItem("theme", "dark");
-    } else {
-        themeButton.textContent = "🌙 الوضع الليلي";
-        localStorage.setItem("theme", "light");
-    }
-});
-
-
+            if (document.body.classList.contains("dark-mode")) {
+                themeButton.textContent = "☀️ الوضع الفاتح";
+                localStorage.setItem("theme", "dark");
+            } else {
+                themeButton.textContent = "🌙 الوضع الليلي";
+                localStorage.setItem("theme", "light");
+            }
+        });
 
     </script>
-    
 
     <footer class="site-footer">
         <p>© 2026 - موقع محمود</p>
