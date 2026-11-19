@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deutsch Lernen</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <h1>Deutsch Lernen 🇩🇪</h1>
+            <p>مساعد مذاكرة اللغة الألمانية</p>
+            <p>الصف الثالث الثانوي 2026 - 2027</p>
+        </header>
+
+        <main>
+
+            <!-- قاموس الكلمات -->
+            <section id="dictionary" style="display: none;">
+
+                <h2>📚 قاموس الكلمات الألمانية</h2>
+
+                <button id="backBtn">العودة للرئيسية</button>
+
+                <input
+                    type="text"
+                    id="searchWord"
+                    placeholder="ابحث عن كلمة ألمانية أو عربية..."
+                >
+
+                <div id="wordsList"></div>
+
+            </section>
+
+            <!-- صفحة اختبر نفسك -->
+            <section id="quiz" style="display: none;">
+
+                <h2>📝 اختبر نفسك</h2>
+
+                <div id="levels"></div>
+
+                <!-- منطقة الأسئلة -->
+                <div id="questionArea" style="display: none;">
+
+                    <h3 id="questionNumber"></h3>
+
+                    <h2 id="questionWord"></h2>
+
+                    <p>اختر المعنى الصحيح:</p>
+
+                    <div id="answers"></div>
+
+                    <p id="feedback"></p>
+
+                    <button id="nextQuestionBtn" style="display: none;">
+                        السؤال التالي
+                    </button>
+
+                </div>
+
+                <button id="quizBackBtn">العودة للرئيسية</button>
+
+            </section>
+
+            <!-- القائمة الرئيسية -->
+            <div class="menu">
+
+                <button id="dictionaryBtn">
+                    📚
+                    <span>قاموس الكلمات</span>
+                </button>
+
+                <button id="quizBtn">
+                    🧠
+                    <span>اختبر نفسك</span>
+                </button>
+
+                <button>
+                    🔄
+                    <span>مراجعة الكلمات</span>
+                </button>
+
+                <button>
+                    📊
+                    <span>مستوى التقدم</span>
+                </button>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p>Viel Erfolg! 🌟</p>
+            <p>بالتوفيق والنجاح</p>
+        </footer>
+
+    </div>
+    <button id="scrollTopBtn" title="الرجوع لأعلى">⬆</button>
+    <script src="words.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./service-worker.js");
+        }
+    </script>
+    
+</body>
+</html>
